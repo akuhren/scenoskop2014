@@ -1153,8 +1153,15 @@ Kristensen</div>
 		
 		if(detectmob()) {
 		    	$('.vis-mere').bind("touchstart", function(){
+		
 		    		var no = this.id.slice(-2);
-		    	    var bt_text = ($('#beskrivelse'+no).css('display') == "none") ? "Luk" : "Vis mere...";
+		    	    var bt_text;
+				if($('#beskrivelse'+no).css('display') == "none"){
+					bt_text = "Luk";
+				    $('html,body').animate({scrollTop: $("#overskrift"+no).offset().top}, 'slow');
+				} else {
+					bt_text = "Vis mere...";
+				}
 		    		$('#beskrivelse'+no).slideToggle("fast");
 		    	    $(this).html(bt_text);
 							return false;
