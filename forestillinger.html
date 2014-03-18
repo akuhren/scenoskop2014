@@ -46,7 +46,7 @@
     <div class="w-nav-overlay" data-wf-ignore=""></div></div>
   </div>
   <div>
-    <div class="w-container w-hidden-main w-hidden-medium w-hidden-small forestilling-overskrift overskrift-streg" id="overskrift1">
+    <div class="w-container w-hidden-main w-hidden-medium w-hidden-small forestilling-overskrift overskrift-streg" id="overskrift01">
       <h6>RENT</h6>
     </div>
   </div>
@@ -95,7 +95,7 @@ www.fjordagerscenen.dk.
       <br>
       <br>Medvirkende: Castet bag RENT</div>
   </div>
-  <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift2">
+  <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift02">
     <h6>Den lille seddel fra skuffen</h6>
   </div>
   <div class="w-clearfix">
@@ -137,7 +137,7 @@ fortrydelse, lykke og omelet.
       <br>Medvirkende: Rasmus Borst og Stine W. Madsen
       <br>Instruktør: Rasmus Borst</div>
   </div>
-  <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift3">
+  <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift03">
     <h6>Der er ingen der blaffer</h6>
   </div>
   <div class="w-clearfix info-blok">
@@ -186,7 +186,7 @@ aftaler at det er fra nu af det gælder og stikker af.
     <div class="w-container forestilling-overskrift overskrift-streg blandede-bolsjer" id="forestilling-4-overskrift">
       <h6>Blandede Bolsjer</h6>
     </div>
-    <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift4">
+    <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift04">
       <h6>Ingen Bjerge</h6>
     </div>
     <div class="w-clearfix">
@@ -236,7 +236,7 @@ ud over en tilfældig fugl der flyver forbi.
     <div class="w-container forestilling-overskrift overskrift-streg blandede-bolsjer" id="forestilling-5-overskrift">
       <h6>Blandede Bolsjer</h6>
     </div>
-    <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift5">
+    <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift05">
       <h6>Udbrændt</h6>
     </div>
   </div>
@@ -280,7 +280,7 @@ mennesker. Men hvis uheldet er ude, er der så nogen der vil hjælpe ham?
       <div class="w-container forestilling-overskrift overskrift-streg blandede-bolsjer" id="forestilling-6-overskrift">
         <h6>Blandede Bolsjer</h6>
       </div>
-      <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift6">
+      <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift06">
         <h6>Hvad er din definition?</h6>
       </div>
     </div>
@@ -326,7 +326,7 @@ en rejse og find din definition.&nbsp;
         <br>Dramatiker/Instruktør: Ditte Marie Kristiansen</div>
     </div>
     <div>
-      <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift7">
+      <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift07">
         <h6>Life in Action</h6>
       </div>
       <div class="w-clearfix">
@@ -378,7 +378,7 @@ foregår i nuet, direkte – uden manuskript og uden pis.
       </div>
     </div>
     <div>
-      <section class="w-container forestilling-overskrift overskrift-streg" id="overskrift8">
+      <section class="w-container forestilling-overskrift overskrift-streg" id="overskrift08">
         <h6>Året før Dagen efter</h6>
       </section>
       <div class="w-clearfix">
@@ -430,7 +430,7 @@ Jørgensen &nbsp;
       <div>
         <div>
           <div>
-            <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift9">
+            <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift09">
               <h6>Jorden er Giftig</h6>
             </div>
             <div class="w-clearfix">
@@ -1134,32 +1134,37 @@ Kristensen</div>
   <script>
   $(document).ready(function() {
 	function detectmob() { 
-	 if (navigator.userAgent.match(/Android/i)
-	  || navigator.userAgent.match(/webOS/i)
-	  || navigator.userAgent.match(/iPhone/i)
-	  || navigator.userAgent.match(/iPad/i)
-	  || navigator.userAgent.match(/iPod/i)
-	  || navigator.userAgent.match(/BlackBerry/i)
-	  || navigator.userAgent.match(/Windows Phone/i))
-	  { return true; } else { return false; }
-	}
+		 if (navigator.userAgent.match(/Android/i)
+		  || navigator.userAgent.match(/webOS/i)
+		  || navigator.userAgent.match(/iPhone/i)
+		  || navigator.userAgent.match(/iPad/i)
+		  || navigator.userAgent.match(/iPod/i)
+		  || navigator.userAgent.match(/BlackBerry/i)
+		  || navigator.userAgent.match(/Windows Phone/i))
+		  { return true; } else { return false; }
+		}
+		
+		$('.vis-mere').on('morph', function() {
+			var no = this.id.slice(-2);
+			$(this).attr("href", "javascript:toggleDiv('"+no+"')");
+		});
+		
+		$('.vis-mere').trigger("morph");
 
-	if(detectmob()) {
-    	$('.vis-mere').bind("touchstart", function(){
-    		var no = this.id.slice(-2);
-    	    var bt_text = ($('#beskrivelse'+no).css('display') == "none") ? "Luk" : "Vis mere...";
-    		$('#beskrivelse'+no).slideToggle("fast");
-    	    $(this).html(bt_text);
-    	});
-	} else {
-    	$('.vis-mere').click(function(){
-    		var no = this.id.slice(-2);
-    	    var bt_text = ($('#beskrivelse'+no).css('display') == "none") ? "Luk" : "Vis mere...";
-    		$('#beskrivelse'+no).slideToggle("fast");
-    	    $(this).html(bt_text);
-    	});
-	}
     });
+	
+	function toggleDiv(no){
+   	    var bt_text;
+		
+		if($('#beskrivelse'+no).css('display') == "none"){
+			bt_text = "Luk";
+		    $('html,body').animate({scrollTop: $("#overskrift"+no).offset().top}, 'slow');
+		} else {
+			bt_text = "Vis mere...";
+		}
+   		$('#beskrivelse'+no).slideToggle("fast");
+   	    $("#mere"+no).html(bt_text);
+	}
   </script>
 
 </body></html>
