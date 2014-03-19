@@ -44,7 +44,7 @@
     <div class="w-nav-overlay" data-wf-ignore=""></div></div>
   </div>
   <div class="forestilling1 margin">
-    <div class="w-container forestilling-overskrift overskrift-streg">
+    <div class="w-container forestilling-overskrift overskrift-streg" id="overskrift01">
       <h6>Rent</h6>
     </div>
     <div>
@@ -1019,22 +1019,22 @@ Trappehave, <a href="https://www.facebook.com/people/Emma-C%C3%A6cilie-%C3%98str
 		
 		$('.vis-mere').trigger("morph");
 		
-		if(detectmob()) {
-		    	$('.vis-mere').bind("touchstart", function(){
-		
-		    		var no = this.id.slice(-2);
-		    	    var bt_text;
-				if($('#beskrivelse'+no).css('display') == "none"){
-					bt_text = "Luk";
-				    $('html,body').animate({scrollTop: $("#overskrift"+no).offset().top}, 'slow');
-				} else {
-					bt_text = "Vis mere...";
-				}
-		    		$('#beskrivelse'+no).slideToggle("fast");
-		    	    $(this).html(bt_text);
-							return false;
-		    	});
-		} else {
+		// if(detectmob()) {
+		//     	$('.vis-mere').bind("touchstart", function(){
+		// 
+		//     		var no = this.id.slice(-2);
+		//     	    var bt_text;
+		// 		if($('#beskrivelse'+no).css('display') == "none"){
+		// 			bt_text = "Luk";
+		// 		    $('html,body').animate({scrollTop: $("#overskrift"+no).offset().top}, 'slow');
+		// 		} else {
+		// 			bt_text = "Vis mere...";
+		// 		}
+		//     		$('#beskrivelse'+no).slideToggle("fast");
+		//     	    $(this).html(bt_text);
+		// 					return false;
+		//     	});
+		// } else {
 		    	$('.vis-mere').click(function(){
 		
 		    		var no = this.id.slice(-2);
@@ -1049,7 +1049,7 @@ Trappehave, <a href="https://www.facebook.com/people/Emma-C%C3%A6cilie-%C3%98str
 		    	    $(this).html(bt_text);
 							return false;
 		    	});
-		}
+		// }
 		
 
     });
