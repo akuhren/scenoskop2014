@@ -46,7 +46,7 @@ img {
   vertical-align: middle;
   display: inline-block;
 }
-.w-mobile * {
+html.touch * {
   background-attachment: scroll !important;
 }
 .w-block {
@@ -1081,4 +1081,12 @@ textarea.w-select {
   .w-nav[data-collapse="tiny"] .w-nav-button {
     display: block;
   }
+}
+[data-ix],
+[data-ix-affect] {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+[data-ix]:empty:after {
+  content: " ";
 }

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Sun Mar 16 2014 18:39:02 GMT+0000 (UTC) -->
-<html class="wf-oswald-n3-active wf-oswald-n4-active wf-oswald-n7-active wf-montserrat-n4-active wf-montserrat-n7-active wf-active" data-wf-site="52f91c58129e615e1400007a"><head>
+<!-- Last Published: Wed Mar 19 2014 09:03:41 GMT+0000 (UTC) -->
+<html style="" class="wf-oswald-n3-active wf-oswald-n4-active wf-oswald-n7-active wf-montserrat-n4-active wf-montserrat-n7-active wf-active w-mod-js w-mod-no-touch w-mod-video" data-wf-site="532339cab69573570c00024c"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <title>Teaterfestival</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="index-filer/normalize.css">
   <link rel="stylesheet" type="text/css" href="index-filer/webflow.css">
-  <link rel="stylesheet" type="text/css" href="index-filer/scenoskop.css">  
+  <link rel="stylesheet" type="text/css" href="index-filer/scenoskop.css">
   <script async="" src="index-filer/cbgapi.js"></script><script src="index-filer/webfont.js"></script>
   <link href="index-filer/css.css" rel="stylesheet"><script>
     WebFont.load({
@@ -17,11 +17,8 @@
       }
     });
   </script>
-  <script>
-    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
-  </script>
+  <script type="text/javascript" src="index-filer/modernizr.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="https://y7v4p6k4.ssl.hwcdn.net/placeholder/favicon.ico">
-  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
   <script type="text/javascript" href="http://code.jquery.com/jquery-latest.min.js"></script>
 <script gapi_processed="true" src="index-filer/plusone.js" type="text/javascript"></script></head>
 <body>
@@ -29,7 +26,7 @@
     <img class="logo" src="index-filer/Scenoskop-logo-br300px.png" alt="52f9203d129e615e140000d2_Scenoskop-logo-br300px.png">
   </div>
   <div class="bund">
-    <div class="w-container bund1"><a class="button menuknap" href="program.html">PROGRAM</a><a class="button menuknap" href="forestillinger.html">FORESTILLINGER</a><a class="button menuknap" href="#">BILLETTER</a><a class="button menuknap" href="kort.html">KORT</a><a class="button menuknap" href="#">PUBLIKUMSAFSTEMNING</a>
+    <div class="w-container bund1"><a class="button menuknap" href="program.html">PROGRAM</a><a class="button menuknap" href="forestillinger.html">FORESTILLINGER</a><a class="button menuknap" href="billetter.html">BILLETTER</a><a class="button menuknap" href="kort.html">KORT</a><a class="button menuknap" href="publikumsafstemning.html">PUBLIKUMSAFSTEMNING</a>
     </div>
   </div>
   <script type="text/javascript" src="index-filer/jquery.js"></script>
@@ -39,7 +36,7 @@
         $('.beskrivelse').hide();
     	$('.vis-mere').bind("touchstart", function(){
     	    //alert("1");
-    		var no = this.id.slice(-2);
+    		var no = this.id.slice(-1);
     	    var bt_text = ($('#beskrivelse'+no).css('display') == "none") ? "Luk" : "Vis mere...";
     		$('#beskrivelse'+no).slideToggle("fast");
     	    $(this).html(bt_text);
