@@ -4,3 +4,4 @@ build/
 rename-youtubelinks.pl
 videos/
 scripts/
+*-filer/media*
